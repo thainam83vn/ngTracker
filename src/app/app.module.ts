@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { Tracker } from './tracker/tracker.component';
+import { TrackerDetail } from './tracker/tracker-detail.component';
+import { TrackerStage } from './tracker/tracker-stage.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, Tracker,TrackerDetail,TrackerStage
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,38 @@
+<div class="content-box">
+    <div>
+        <div>
+            <div class="title">
+                <i class="material-icons">room</i>
+                <div>
+                    <div class="name">{{info.name}}</div>
+                    <div class="update">Last Updated {{data.lastUpdated | date}}</div>
+                </div>
+            </div>
+            <div class="lines">
+                <div class="line" *ngFor="let log of data.logs">
+                    {{log.message}}
+                    <span class="line-date">{{log.updatedDate | date}}</span>
+                </div>
+            </div>
+            <div class="see-more-text" *ngIf="data.logs.length>3" (click)="showSeeMore()">See more</div>
+            <div class="san">SAN {{data.san}} originally on the CEAC was replaced</div>
+        </div>
+        <div>
+            <div>
+                <i class="material-icons">mail_outline</i>
+                <div>Talk to requestor</div>
+            </div>
+            <div>
+                <i class="material-icons">mail_outline</i>
+                <div>Talk to partner</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-logs">
+    <div class="line" *ngFor="let log of data.logs">
+        {{log.message}}
+        <span class="line-date">{{log.updatedDate | date}}</span>
+    </div>
+</div>

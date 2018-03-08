@@ -1,0 +1,18 @@
+<div class="tracker">
+    <tracker-stage [label]="'evaluation id '+data.evaluationId" [info]="stages[data.status].layout.evaluation"></tracker-stage>
+    <tracker-detail [info]="stages[data.status].layout.detail" [data]="data" *ngIf="stages[data.status].layout.detail.pos===1"></tracker-detail>
+
+    <tracker-stage  [label]="'Owner Review'" [info]="stages[data.status].layout.owner"></tracker-stage>
+    <tracker-detail [info]="stages[data.status].layout.detail" [data]="data" *ngIf="stages[data.status].layout.detail.pos===2"></tracker-detail>
+    
+    <tracker-stage   [label]="'Approver Initiated'" [info]="stages[data.status].layout.approval"></tracker-stage>
+    <tracker-detail [info]="stages[data.status].layout.detail" [data]="data" *ngIf="stages[data.status].layout.detail.pos===3"></tracker-detail>
+            
+    <tracker-stage   [label]="'Final Status'" [info]="stages[data.status].layout.final"></tracker-stage>
+    <tracker-detail [info]="stages[data.status].layout.detail" [data]="data" *ngIf="stages[data.status].layout.detail.pos===4"></tracker-detail>    
+</div>
+
+<div>
+    <h1>{{data.status}}</h1>
+    <button *ngFor="let action of stages[data.status].actions" (click)="do(action)">{{action.name}}</button>
+</div>
